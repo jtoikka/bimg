@@ -1,0 +1,4 @@
+[wrap-git]
+directory = bx
+url = https://github.com/jtoikka/bx.git
+revision = head

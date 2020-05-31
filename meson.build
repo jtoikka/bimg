@@ -2,12 +2,19 @@ project('bimg', 'cpp', version : '1.0.0', license: 'BSD 2-Clause', default_optio
 
 includes = ['include', '3rdparty']
 
-src = ['src/amalgamated.cpp']
+src = [
+  'src/image.cpp',
+  'src/image_cubemap_filter.cpp',
+  'src/image_decode.cpp',
+  'src/image_encode.cpp',
+  'src/image_gnf.cpp'  
+]
 
 lib = static_library(
   'libbimg',
   src,
-  include_directories : includes
+  include_directories : includes,
+  dependencies        : bx_dep
 )
 
 bimg_dep = declare_dependency(include_directories : includes, link_with: lib)
