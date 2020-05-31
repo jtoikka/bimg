@@ -1,6 +1,6 @@
 project('bimg', 'cpp', version : '1.0.0', license: 'BSD 2-Clause', default_options : ['cpp_std=c++14'])
 
-includes = ['include', '3rdparty']
+includes = ['include', '3rdparty', '3rdparty/astc-codec/include', '3rdparty/iqa/include']
 
 src = [
   'src/image.cpp',
@@ -9,6 +9,8 @@ src = [
   'src/image_encode.cpp',
   'src/image_gnf.cpp'  
 ]
+
+bx_dep = dependency('bx', fallback: ['bx', 'bx_dep'])
 
 lib = static_library(
   'libbimg',
